@@ -1,0 +1,29 @@
+server:
+  port: 8060
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com"
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: lb://employee-service
+          predicates:
+            - Path=//employee/**
+        - id: backoffice-service
+          uri: lb://backoffice-service
+          predicates:
+            - Path=//backoffice/**
