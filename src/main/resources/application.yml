@@ -23,6 +23,8 @@ spring:
   config:
     import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com/"
   cloud:
+    discovery:
+      enabled: true
     gateway:
       default-filters:
         - StripPrefix=1
