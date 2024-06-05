@@ -4,12 +4,12 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
+      defaultZone: service-registry-668227fe367b.herokuapp.com/eureka
 
 management:
   zipkin:
     tracing:
-      endpoint: https://zipkin-c57be76182bd.herokuapp.com/api/v2/spans
+      endpoint: zipkin-c57be76182bd.herokuapp.com/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
@@ -18,7 +18,7 @@ spring:
   application:
     name: api-gateway
   config:
-    import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com/"
+    import: "optional:configserver:configuration-service-6d7884366eca.herokuapp.com/"
   cloud:
     gateway:
       routes:
