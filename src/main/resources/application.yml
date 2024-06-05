@@ -27,10 +27,10 @@ spring:
           lowerCaseServiceId: true
       routes:
         - id: employee-service
-          uri: lb://employee-service
+          uri: lb://employee-service/
           predicates:
             - Path=/employee/**
         - id: backoffice-service
-          uri: lb://backoffice-service
+          uri: lb://backoffice-service/
           predicates:
             - Path=/backoffice/**
