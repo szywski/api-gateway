@@ -1,8 +1,9 @@
 server:
-  port: ${PORT:8060}
+  port: 8060
 
 eureka:
   instance:
+    hostname: localhost
     preferIpAddress: true
   client:
     serviceUrl:
@@ -25,8 +26,10 @@ spring:
     discovery:
       enabled: true
     gateway:
-      default-filters:
-        - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
       routes:
         - id: employee-service
           uri: lb://employee-service/
