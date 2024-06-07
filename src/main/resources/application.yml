@@ -35,7 +35,7 @@ spring:
           predicates:
             - Path=//employee/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=0
         - id: BACKOFFICE-SERVICE
           uri: lb://BACKOFFICE-SERVICE
           predicates:
