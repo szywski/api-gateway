@@ -1,5 +1,5 @@
 server:
-  port: 8060
+  port: ${PORT:8060}
 
 eureka:
   client:
@@ -21,10 +21,6 @@ spring:
     import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com/"
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
       routes:
         - id: employee-service
           uri: lb://employee-service
