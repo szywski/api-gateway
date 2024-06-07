@@ -25,10 +25,10 @@ spring:
     gateway:
       routes:
         - id: employee-service
-          uri: lb://employee-service
+          uri: lbs://employee-service
           predicates:
             - Path=/employee/**
         - id: backoffice-service
-          uri: lb://backoffice-service
+          uri: lbs://backoffice-service
           predicates:
             - Path=/backoffice/**
