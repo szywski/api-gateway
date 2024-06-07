@@ -5,7 +5,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
-
+      
 management:
   zipkin:
     tracing:
@@ -18,15 +18,15 @@ spring:
   application:
     name: api-gateway
   config:
-    import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com/"
+    import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com"
   cloud:
     gateway:
       routes:
         - id: employee-service
           uri: lb://employee-service
           predicates:
-            - Path=/employee/**
+            - Path=//employee/**
         - id: backoffice-service
           uri: lb://backoffice-service
           predicates:
-            - Path=/backoffice/**
+            - Path=//backoffice/**
