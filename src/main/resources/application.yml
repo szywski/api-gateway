@@ -18,17 +18,17 @@ management:
 
 spring:
   application:
-    name: api-gateway
+    name: API-GATEWAY
   config:
     import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com"
   cloud:
     gateway:
       routes:
-        - id: employee-service
-          uri: lb://employee-service
+        - id: EMPLOYEE-SERVICE
+          uri: lb://EMPLOYEE-SERVICE
           predicates:
             - Path=//employee/**
-        - id: backoffice-service
-          uri: lb://backoffice-service
+        - id: BACKOFFICE-SERVICE
+          uri: lb://BACKOFFICE-SERVICE
           predicates:
             - Path=//backoffice/**
