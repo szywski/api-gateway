@@ -1,7 +1,5 @@
 server:
   port: ${PORT:8060}
-  ssl:
-    enabled: true
 
 eureka:
   instance:
