@@ -2,6 +2,8 @@ server:
   port: ${PORT:8060}
 
 eureka:
+  instance:
+    hostname: api-gateway-02785a509cc8.herokuapp.com/
   client:
     serviceUrl:
       defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
