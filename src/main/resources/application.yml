@@ -1,5 +1,7 @@
 server:
   port: ${PORT:8060}
+  ssl:
+    enabled: true
 
 eureka:
   instance:
@@ -33,8 +35,8 @@ spring:
         - id: EMPLOYEE-SERVICE
           uri: lb://EMPLOYEE-SERVICE
           predicates:
-            - Path=//employee/**
+            - Path=/employee/**          
         - id: BACKOFFICE-SERVICE
           uri: lb://BACKOFFICE-SERVICE
           predicates:
-            - Path=//backoffice/**
+            - Path=/backoffice/**
