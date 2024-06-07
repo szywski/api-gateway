@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: api-gateway-02785a509cc8.herokuapp.com/
+    hostname: https://api-gateway-02785a509cc8.herokuapp.com/
   client:
     serviceUrl:
       defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
