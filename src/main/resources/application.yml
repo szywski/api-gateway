@@ -23,19 +23,19 @@ spring:
   config:
     import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com/"
   cloud:
-    discovery:
-      enabled: true
     gateway:
+      default-filters:
+        - StripPrefix=1
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
       routes:
         - id: employee-service
-          uri: lb://employee-service/
+          uri: lb://employee-service
           predicates:
             - Path=/employee/**
         - id: backoffice-service
-          uri: lb://backoffice-service/
+          uri: lb://backoffice-service
           predicates:
             - Path=/backoffice/**
