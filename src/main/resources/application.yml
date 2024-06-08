@@ -25,7 +25,7 @@ spring:
     name: API-GATEWAY
   config:
     import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com"
-   cloud:
+  cloud:
     discovery:
       enabled: true
     gateway:
