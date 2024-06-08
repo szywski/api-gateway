@@ -36,3 +36,8 @@ spring:
           order: 1
           predicates:
             - Path=/backoffice/**
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
