@@ -5,10 +5,6 @@ eureka:
   instance:
     hostname: api-gateway-02785a509cc8.herokuapp.com
   client:
-    fetch-registry: true
-    register-with-eureka: true
-    healthcheck:
-      enabled: true
     serviceUrl:
       defaultZone: https://service-registry-668227fe367b.herokuapp.com/eureka
      
@@ -29,12 +25,6 @@ spring:
     discovery:
       enabled: true
     gateway:
-      httpclient:
-        ssl:
-          useInsecureTrustManager: false
-      discovery:
-        locator:
-          enabled: false
       routes:
         - id: EMPLOYEE-SERVICE
           uri: lb://EMPLOYEE-SERVICE
@@ -46,5 +36,3 @@ spring:
           order: 1
           predicates:
             - Path=/backoffice/**
-          filters:
-            - StripPrefix=1
