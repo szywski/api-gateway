@@ -19,24 +19,17 @@ management:
 spring:
   application:
     name: API-GATEWAY
-  config:
-    import: "optional:configserver:https://configuration-service-6d7884366eca.herokuapp.com"
   cloud:
-    discovery:
-      enabled: true
     gateway:
       routes:
         - id: EMPLOYEE-SERVICE
           uri: lb://EMPLOYEE-SERVICE
-          order: 0
           predicates:
             - Path=/employee/**
         - id: BACKOFFICE-SERVICE
           uri: lb://BACKOFFICE-SERVICE
-          order: 1
           predicates:
             - Path=/backoffice/**
-
 
 logging:
   level:
